@@ -1,1 +1,40 @@
-r
+@startuml
+
+class HurricaneData {
+    - hurricanes: ArrayList<Hurricane>
+    + readInputFile(filename: String): void
+    + sortByStormName(order: String): void
+    + sortByStormCategory(order: String): void
+    + sortByStormYear(order: String): void
+    + sortByStormMonth(order: String): void
+    + calculateAverageCategory(): double
+    + calculateMostActiveYear(): int
+    + aggregateTotalByCategory(): Map<Integer, Integer>
+    + aggregateTotalByYear(): Map<Integer, Integer>
+}
+
+class Hurricane {
+    - name: String
+    - category: int
+    - date: LocalDate
+    + Hurricane(name: String, category: int, date: LocalDate)
+    + getName(): String
+    + getCategory(): int
+    + getDate(): LocalDate
+}
+
+class Menu {
+    + displayMenu(): int
+    + promptSortOrder(sortType: String): String
+}
+
+class OutputWriter {
+    + writeToFile(filename: String, data: String): void
+}
+
+HurricaneData --> Hurricane
+HurricaneData --> OutputWriter
+Menu --> HurricaneData
+Menu --> OutputWriter
+
+@enduml
