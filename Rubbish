@@ -23,18 +23,58 @@ class Hurricane {
     + getDate(): LocalDate
 }
 
-class Menu {
-    + displayMenu(): int
-    + promptSortOrder(sortType: String): String
+class MenuOption1 {
+    + execute(hurricaneData: HurricaneData, sortOrder: String): void
+}
+
+class MenuOption2 {
+    + execute(hurricaneData: HurricaneData, sortOrder: String): void
+}
+
+class MenuOption3 {
+    + execute(hurricaneData: HurricaneData, sortOrder: String): void
+}
+
+class MenuOption4 {
+    + execute(hurricaneData: HurricaneData, sortOrder: String): void
+}
+
+class MenuOption5 {
+    + execute(hurricaneData: HurricaneData): void
+}
+
+class MenuOption6 {
+    + execute(hurricaneData: HurricaneData): void
+}
+
+class MenuOption7 {
+    + execute(hurricaneData: HurricaneData): void
+}
+
+class MenuOption8 {
+    + execute(hurricaneData: HurricaneData): void
 }
 
 class OutputWriter {
     + writeToFile(filename: String, data: String): void
 }
 
+class Main {
+    + main(args: String[]): void
+}
+
 HurricaneData --> Hurricane
 HurricaneData --> OutputWriter
-Menu --> HurricaneData
-Menu --> OutputWriter
+
+MenuOption1 --> HurricaneData
+MenuOption2 --> HurricaneData
+MenuOption3 --> HurricaneData
+MenuOption4 --> HurricaneData
+MenuOption5 --> HurricaneData
+MenuOption6 --> HurricaneData
+MenuOption7 --> HurricaneData
+MenuOption8 --> HurricaneData
+
+Main --> HurricaneData
 
 @enduml
